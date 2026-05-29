@@ -1,6 +1,8 @@
-# QuickSpares CLIP photo-search sidecar
-# Tested with Python 3.10 - 3.13. On first install, sentence-transformers
-# downloads the CLIP ViT-B/32 weights (~150 MB) from HuggingFace.
+--extra-index-url https://download.pytorch.org/whl/cpu
+
+torch
+torchvision
+torchaudio
 
 fastapi>=0.115.0
 uvicorn[standard]>=0.32.0

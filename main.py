@@ -22,6 +22,7 @@ from __future__ import annotations
 import io
 import logging
 import os
+os.environ["TOKENIZERS_PARALLELISM"] = "false" 
 from typing import Optional
 
 import requests
@@ -50,7 +51,7 @@ log = logging.getLogger("clip-sidecar")
 # ── Model load (eager) ─────────────────────────────────────────────────────────
 
 log.info("Loading CLIP model: %s", MODEL_NAME)
-model = SentenceTransformer(MODEL_NAME)
+model = SentenceTransformer(MODEL_NAME, device="cpu")
 log.info("Model loaded; serving as version=%s", MODEL_VERSION)
 
 # ── FastAPI app ────────────────────────────────────────────────────────────────
